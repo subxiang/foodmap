@@ -12,7 +12,7 @@
 		}
 	</style>
 	
-	<script src="https://www.googleapis.com/maps/api/js?sensor=false">
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false">
 	</script>
 	
 	<script>
