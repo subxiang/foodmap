@@ -31,5 +31,6 @@
 </head>
 <body>
 	<div id='map-canvas'></div>
+	<?php test();?>
 </body>
 </html>
