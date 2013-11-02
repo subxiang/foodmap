@@ -37,8 +37,10 @@
 				});
 
 			google.maps.event.addListener(map, 'center_changed', function() {
+					console.log('center changed...');
 					window.setTimeout(function() {
 							map.panTo(marker.getPosition());
+							console.log('moving back.');
 						}, 3000);
 				});
 
@@ -52,6 +54,7 @@
 						map: map
 					});
 				map.setCenter(location);
+				console.log('setting center...');
 			}
 		}
 		
