@@ -41,6 +41,17 @@
 							map.panTo(marker.getPosition());
 						}, 3000);
 				});
+
+			google.maps.event.addListener(map, 'click', function(event) {
+					placeMarker(event.latLng);
+				});
+		}
+
+		function placeMarker(location) {
+			var marker = new google.maps.Marker({
+					position: location,
+					map: map
+				});
 		}
 
 		google.maps.event.addDomListener(window, 'load', initialize);
