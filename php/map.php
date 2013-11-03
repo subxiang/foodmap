@@ -15,51 +15,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?sensor=false">
 	</script>
 	
-	<script>
-		function initialize() {
-			var options = {
-				zoom: 8,
-				center: new google.maps.LatLng(-34.397, 150.644),
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			};
-
-			var map = new google.maps.Map(document.getElementById('map-canvas'), options);
-
-			var marker = new google.maps.Marker({
-					position: map.getCenter(),
-					map: map,
-					title: 'Click to zoom'
-				});
-
-			google.maps.event.addListener(marker, 'click', function() {
-					map.setZoom(8);
-					map.setCenter(marker.getPosition());
-				});
-
-			google.maps.event.addListener(map, 'center_changed', function() {
-					console.log('center changed...');
-					window.setTimeout(function() {
-							map.panTo(marker.getPosition());
-							console.log('moving back.');
-						}, 3000);
-				});
-
-			google.maps.event.addListener(map, 'click', function(event) {
-					placeMarker(event.latLng);
-				});
-
-			function placeMarker(location) {
-				var marker = new google.maps.Marker({
-						position: location,
-						map: map
-					});
-				map.setCenter(location);
-				console.log('setting center...');
-			}
-		}
-		
-
-		google.maps.event.addDomListener(window, 'load', initialize);
+	<script src="script.js">
 	</script>
 </head>
 <body>
